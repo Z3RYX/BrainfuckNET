@@ -38,6 +38,8 @@ namespace BrainfuckNET
         public static (int steps, double total_ms, string output) Execute(string code, string input = null, string OutFile = null)
         {
             Tape = new ushort[TapeLength];
+            Pointer = 0;
+            CodePointer = 0;
 
             Regex r = new Regex(@"[^<>\+\-\[\],.]");
             _Code = r.Replace(code, "");
